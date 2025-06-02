@@ -24,7 +24,7 @@
                 <mxCell id="6" value="addresses" style="shape=swimlane;" parent="1" vertex="1">
                     <mxGeometry x="30" y="250" width="180" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;purchase&lt;/span&gt;&lt;br&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;post_code&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;city&lt;br&gt;street_address&lt;br&gt;bulding_name&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;" parent="6" vertex="1">
+                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;purchase&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;post_code&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;city&lt;br&gt;street_address&lt;br&gt;bulding_name&lt;br&gt;phone_number&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;" parent="6" vertex="1">
                     <mxGeometry y="40" width="180" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="purchases" style="shape=swimlane;" parent="1" vertex="1">
