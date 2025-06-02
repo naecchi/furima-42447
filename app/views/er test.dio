@@ -1,0 +1,58 @@
+<mxfile host="65bd71144e">
+    <diagram name="ER図" id="er1">
+        <mxGraphModel dx="520" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="users" style="shape=swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="20" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="2" source="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="93" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="nickname &lt;br&gt;email &lt;br&gt;email&lt;br&gt;password&lt;br&gt;last_name&lt;br&gt;first_name&lt;br&gt;last_name_kana&lt;br&gt;first_name_kana&lt;br&gt;birthday_date&amp;nbsp;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="40" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="items" style="shape=swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="20" width="180" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="&lt;br&gt;user_id&lt;br&gt;name&lt;br&gt;description&lt;br&gt;category_id&lt;br&gt;status_id&lt;br&gt;area_id&lt;br&gt;shipping_day_id&lt;br&gt;price&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4">
+                    <mxGeometry y="20" width="110" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="addresses" style="shape=swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="250" width="180" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;purchase_&lt;/span&gt;id &lt;br&gt;prefecture_id&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;prefecture&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;city&lt;br&gt;street_address&lt;br&gt;bulding_name&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;" parent="6" vertex="1">
+                    <mxGeometry y="40" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="180" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="370" y="180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="purchases" style="shape=swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="250" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="user_id &lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;item_id&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;" parent="8" vertex="1">
+                    <mxGeometry y="40" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="edgeStyle=none;html=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="280" y="115" as="sourcePoint"/>
+                        <mxPoint x="280" y="115" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="9">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="200" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
