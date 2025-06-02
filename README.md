@@ -6,7 +6,7 @@
 | Column             | Type       | Options                          | 説明             |
 |--------------------|------------|----------------------------------|------------------|
 | nickname           | string     | null: false                      | ニックネーム     |
-| email              | string     | null: false, unique              | メールアドレス   |
+| email              | string     | null: false, unique : true       | メールアドレス   |
 | encrypted_password | string     | null: false                      | パスワード（暗号化 |
 | last_name          | string     | null: false                      | 姓               |
 | first_name         | string     | null: false                      | 名               |
@@ -61,7 +61,7 @@
 | Column          | Type       | Options                       | 説明               |
 |-----------------|------------|-------------------------------|--------------------|
 | purchase        | references | null: false, foreign_key: true| 購入情報との紐付け   |
-| post_code       | integer    | null: false                   | 郵便番号            |
+| post_code       | string     | null: false                   | 郵便番号            |
 | prefecture_id   | integer    | null: false                   | 都道府県（ActiveHash）|
 | city            | string     | null: false                   | 市区町村           |
 | street_address  | string     | null: false                   | 番地               |

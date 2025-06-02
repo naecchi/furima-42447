@@ -16,19 +16,24 @@
                     <mxGeometry y="40" width="180" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="shape=swimlane;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="20" width="180" height="210" as="geometry"/>
+                    <mxGeometry x="280" y="20" width="160" height="175" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="&lt;br&gt;user&lt;br&gt;name&lt;br&gt;description&lt;br&gt;category_id&lt;br&gt;status_id&lt;br&gt;delivery_cost&lt;br&gt;prefecture_id&lt;br&gt;shipping_day_id&lt;br&gt;price&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
+                <mxCell id="20" value="&lt;br&gt;user&lt;br&gt;name&lt;br&gt;description&lt;br&gt;category_id&lt;br&gt;status_id&lt;br&gt;delivery_cost_id&lt;br&gt;prefecture_id&lt;br&gt;shipping_day_id&lt;br&gt;price&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="4" vertex="1">
                     <mxGeometry y="20" width="110" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="addresses" style="shape=swimlane;" parent="1" vertex="1">
-                    <mxGeometry x="20" y="250" width="180" height="150" as="geometry"/>
+                    <mxGeometry x="30" y="250" width="180" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;purchase&lt;/span&gt;&lt;br&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;post_code&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;prefecture&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;city&lt;br&gt;street_address&lt;br&gt;bulding_name&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;" parent="6" vertex="1">
+                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;purchase&lt;/span&gt;&lt;br&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;post_code&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;prefecture_id&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;city&lt;br&gt;street_address&lt;br&gt;bulding_name&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;" parent="6" vertex="1">
                     <mxGeometry y="40" width="180" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="purchases" style="shape=swimlane;" parent="1" vertex="1">
                     <mxGeometry x="280" y="250" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="8" source="9">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-70" y="40" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="9" value="user&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;item&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;" parent="8" vertex="1">
                     <mxGeometry y="40" width="180" height="40" as="geometry"/>
@@ -39,12 +44,7 @@
                         <mxPoint x="280" y="115" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="9" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="200" y="320" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="28" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.818;entryY=0.842;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="20">
+                <mxCell id="31" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.818;entryY=0.789;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="20">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
