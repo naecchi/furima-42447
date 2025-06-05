@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.1]
       t.date :birthday_date , null: false
 
 
-      # デフォルトで入ってた、この下のはどうしようかな？？（確定したらマイグレーション行う）
+      
 
       ## Database authenticatable
       # t.string :email,              null: false, default: ""
