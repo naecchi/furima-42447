@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :encrypted_password, presence: true
+  
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :last_name_kana, presence: true
@@ -18,15 +17,14 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid' }
 
   # 名前：全角（漢字・ひらがな・カタカナ）
-  VALID_NAME_REGEX = /\A[ぁ-んァ-ン一-龥々ー]+\z/
+  VALID_NAME_REGEX = /\A[ぁ-んァ-ヴー々一-龥]+\z/
   validates :last_name, format: { with: VALID_NAME_REGEX, message: 'is invalid' }
   validates :first_name, format: { with: VALID_NAME_REGEX, message: 'is invalid' }
 
   # カナ名：全角カタカナ
-  VALID_KANA_REGEX = /\A[ァ-ンー－]+\z/
+  VALID_KANA_REGEX = /\A[ァ-ヴー－]+\z/
   validates :last_name_kana, format: { with: VALID_KANA_REGEX, message: 'is invalid' }
   validates :first_name_kana, format: { with: VALID_KANA_REGEX, message: 'is invalid' }
 
-  has_many :items
-  has_many :purchases
+  
 end
