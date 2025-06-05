@@ -1,5 +1,3 @@
-
-
 FactoryBot.define do
   factory :user do
     nickname { 'テストユーザー' } # ← 修正済み
