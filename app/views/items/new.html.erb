@@ -159,12 +159,5 @@
   </footer>
 </div>
 
-<%# 強制エラーチェック %>
-<pre style="background: black; color: lime; padding: 10px;">
-<% if @item && @item.errors.any? %>
-  <%= @item.errors.full_messages.inspect %>
-<% else %>
-  NO ERRORS PRESENT
-<% end %>
-</pre>
+
 

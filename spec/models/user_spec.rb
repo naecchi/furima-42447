@@ -11,7 +11,6 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-    
 
     context '新規登録できない場合' do
       # nickname
@@ -157,8 +156,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-
-    
-      
-
-      

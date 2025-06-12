@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
-  @item = FactoryBot.build(:item, user: FactoryBot.create(:user))
+    @item = FactoryBot.build(:item, user: FactoryBot.create(:user))
   end
 
   describe '商品出品機能' do
@@ -28,7 +28,7 @@ RSpec.describe Item, type: :model do
       it 'category_idが1だと保存できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
 
       it 'imageが添付されていないと保存できない' do
@@ -39,4 +39,3 @@ RSpec.describe Item, type: :model do
     end
   end
 end
-
