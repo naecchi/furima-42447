@@ -21,3 +21,5 @@ window.addEventListener('turbo:load', () => {
   });
 });
 
+window.addEventListener('turbo:load', setupPriceCalculation);
+window.addEventListener('turbo:render', setupPriceCalculation);
