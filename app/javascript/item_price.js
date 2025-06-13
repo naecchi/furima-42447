@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+function setupPriceCalculation() {   
   const priceInput = document.getElementById("item-price");
   const addTaxDom = document.getElementById("add-tax-price");
   const profitDom = document.getElementById("profit");
@@ -19,7 +19,7 @@ window.addEventListener('turbo:load', () => {
       profitDom.innerHTML = "0円";
     }
   });
-});
+}
 
 window.addEventListener('turbo:load', setupPriceCalculation);
 window.addEventListener('turbo:render', setupPriceCalculation);
