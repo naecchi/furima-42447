@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   # パスワード：全角はエラーではじく
   VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: "は半角英数字のみで入力してください" }
+  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数字のみで入力してください' }
 
   # 名前：全角（漢字・ひらがな・カタカナ）
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヴー々一-龥]+\z/
@@ -31,5 +31,5 @@ class User < ApplicationRecord
   validates :last_name_kana, format: { with: VALID_KANA_REGEX, message: 'is invalid' }
   validates :first_name_kana, format: { with: VALID_KANA_REGEX, message: 'is invalid' }
 
-  
+  has_many :items
 end
