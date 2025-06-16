@@ -81,5 +81,6 @@ Naming/MethodParameterName:
  MinNameLength: 1
 
 
- AllCops:
+AllCops:
   NewCops: enable
+  SuggestExtensions: false 
