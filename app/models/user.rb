@@ -13,11 +13,7 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :birthday_date, presence: true
 
-  # パスワード：半角英数字混合
-  VALID_PASSWORD_REGEX = /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid' }
-
-  # パスワード：全角はエラーではじく
+  # パスワード：全角はエラーではじく（半角英数字のみ許可）
   VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数字のみで入力してください' }
 
