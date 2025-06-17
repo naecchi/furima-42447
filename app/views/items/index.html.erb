@@ -128,23 +128,21 @@
     </div>
 
 
-    <ul class='item-lists'>
-      <%# <%= link_to "#" do %> 
-      <%# <% end %> 
-       <%# 商品がある場合 %>
-  <% if @items.present? %>
-    <% @items.each do |item| %>
-      <li class='list'>
+   <% if @items.present? %>
+  <% @items.each do |item| %>
+    <li class='list'>
+      <%= link_to item_path(item) do %>
         <% if item.image.attached? %>
           <%= image_tag item.image, class: "item-img" %>
-
-          <%# 商品が売れていればsold outを表示しましょう %>
-          <%# if item.purchase.present? %>
-          <%# <div class='sold-out'>
-              <span>Sold Out!!</span>
-          </div> %>
-          <%# end %>
         <% end %>
+
+        <%# 商品が売れていればsold outを表示しましょう %>
+        <%# if item.order.present? %>
+        <%#   <div class='sold-out'>
+                <span>Sold Out!!</span>
+              </div> %>
+        <%# end %>
+
         <div class='item-info'>
           <h3 class='item-name'><%= item.name %></h3>
           <div class='item-price'>
@@ -155,8 +153,10 @@
             </div>
           </div>
         </div>
-      </li>
-    <% end %>
+      <% end %> <!-- link_to の end -->
+    </li>
+  <% end %>
+
 
   <%# 商品がない場合：ダミー表示 %>
   <% else %>
