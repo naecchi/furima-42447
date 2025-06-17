@@ -17,7 +17,7 @@
 
 ### Association
 * has_many :items
-* has_many :purchases
+* has_many :orders
 
 
 ### items table（出品商品情報）
@@ -37,11 +37,11 @@
 ### Association
 
 * belongs_to :user
-* has_one :purchase
+* has_one :order
 
 
 
-### purchases table（購入記録）
+### orders table（購入記録）
 
 | Column     | Type       | Options                        | 説明           |
 |------------|------------|------------------------------- |----------------|
@@ -70,7 +70,7 @@
 
 
 ### Association
-* belongs_to :purchase
+* belongs_to :order
 
 
 
