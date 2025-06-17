@@ -23,6 +23,7 @@
       </span>
     </div>
 
+
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で処理を分けている %>
     <% if user_signed_in? %>
     <% if current_user.id == @item.user_id %>
@@ -37,9 +38,20 @@
     <%# 共通条件を満たさなければ何も表示しない %> 
     <% end %>
 
+ 
+
+    
+
+
     <%# <%= link_to "商品の編集", edit_item_path(@item), class: "item-red-btn" %>
     <%# <%= link_to "削除", item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "item-destroy" %> 
     <%# <% else %> 
+
+
+
+   
+    
+   
 
 
       <%# <% if @item.order.blank? %> 

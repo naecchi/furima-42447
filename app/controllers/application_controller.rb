@@ -10,14 +10,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def production?
-    Rails.env.production?
-  end
+def production?
+Rails.env.production?
+end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [
-                                        :nickname, :email, :last_name,
-                                        :first_name, :last_name_kana, :first_name_kana, :birthday_date
+def configure_permitted_parameters
+devise_parameter_sanitizer.permit(:sign_up, keys: [
+                                    :nickname, :email, :last_name,
+                                    :first_name, :last_name_kana, :first_name_kana, :birthday_date
                                       ])
   end
 end
