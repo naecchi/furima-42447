@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order(created_at: :desc)
@@ -26,15 +26,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    # 出品者が商品を削除できるか確認
     if current_user == @item.user
       @item.destroy
-      redirect_to root_path, notice: '商品を削除しました'
-    else
-      redirect_to root_path, alert: '削除権限がありません'
     end
-  end
+    redirect_to root_path
 
   def create
     @item = Item.new(item_params)
