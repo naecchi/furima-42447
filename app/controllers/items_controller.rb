@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.includes(:user).order(created_at: :desc)
@@ -10,17 +11,14 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
     redirect_to root_path unless current_user == @item.user
   end
 
   def update
-    @item = Item.find(params[:id])
-    if current_user == @item.user && @item.update(item_params)
+    if @item.update(item_params)
       redirect_to item_path(@item) # アイテムの更新に成功した場合、詳細ページへリダイレクト
     else
       render :edit, status: :unprocessable_entity # バリデーション失敗時、入力フォームに戻す
@@ -37,6 +35,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(
