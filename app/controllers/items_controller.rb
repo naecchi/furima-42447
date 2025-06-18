@@ -10,11 +10,22 @@ class ItemsController < ApplicationController
   end
 
   def show
-  @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    redirect_to root_path unless current_user == @item.user
+  end
 
-
+  def update
+    @item = Item.find(params[:id])
+    if current_user == @item.user && @item.update(item_params)
+      redirect_to item_path(@item) # アイテムの更新に成功した場合、詳細ページへリダイレクト
+    else
+      render :edit, status: :unprocessable_entity # バリデーション失敗時、入力フォームに戻す
+    end
+  end
 
   def create
     @item = Item.new(item_params)
