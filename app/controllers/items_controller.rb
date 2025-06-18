@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order(created_at: :desc)
@@ -24,6 +24,12 @@ class ItemsController < ApplicationController
       render :edit, status: :unprocessable_entity # バリデーション失敗時、入力フォームに戻す
     end
   end
+
+  def destroy
+    if current_user == @item.user
+      @item.destroy
+    end
+    redirect_to root_path
 
   def create
     @item = Item.new(item_params)
