@@ -25,6 +25,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    # 出品者が商品を削除できるか確認
+    if current_user == @item.user
+      @item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to root_path, alert: '削除権限がありません'
+    end
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save

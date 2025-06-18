@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'items/index'
   devise_for :users
   root to: 'items#index'
-  resources :items, only: [:index, :new, :create, :show, :edit, :update]
+  resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
