@@ -32,7 +32,7 @@
       <%= link_to '削除', item_path(@item), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'item-destroy' %>
     <%# 出品者でなければ購入ボタンを表示 %>
       <% else %>
-        <%= link_to "購入画面に進む", "#", class: "item-red-btn" %>
+        <%= link_to "購入画面に進む", "#", data: { turbo: false }, class:"item-red-btn"%>
       <% end %>
 
     <%# 共通条件を満たさなければ何も表示しない %> 
