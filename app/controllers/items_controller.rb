@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
       @item.destroy
     end
     redirect_to root_path
+  end 
 
   def create
     @item = Item.new(item_params)
