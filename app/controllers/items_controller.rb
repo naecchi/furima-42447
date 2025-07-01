@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.includes(:user).order(created_at: :desc)
+    @items = Item.includes(:user, :order).order(created_at: :desc)
   end
 
   def new
@@ -30,6 +30,8 @@ class ItemsController < ApplicationController
       @item.destroy
     end
     redirect_to root_path
+  end
+
 
   def create
     @item = Item.new(item_params)
@@ -53,4 +55,5 @@ class ItemsController < ApplicationController
       :prefecture_id, :shipping_day_id
     ).merge(user_id: current_user.id)
   end
-end
+  
+end 
