@@ -36,7 +36,7 @@
     <p class="or-text">or</p>
     <%= link_to '削除', item_path(@item), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }, class: 'item-destroy' %>
   <% elsif current_user.id != @item.user_id && @item.order.blank? %>
-    <%= link_to "購入画面に進む", item_orders_path(@item), class: "item-red-btn" %>
+    <%= link_to "購入画面に進む", item_orders_path(@item), class: "item-red-btn", data: { turbo: false } %>
   <% end %>
 <% end %>
 
@@ -111,19 +111,3 @@
 </div>
 
 <%= render "shared/footer" %>
-
-    
-
-
-    <%# <%= link_to "商品の編集", edit_item_path(@item), class: "item-red-btn" %>
-    <%# <%= link_to "削除", item_path(@item), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "item-destroy" %> 
-    <%# <% else %> 
-
-      <%# <% if @item.order.blank? %> 
-    <%# <%= link_to "購入画面に進む", new_order_path(item_id: @item.id), class: "item-red-btn" %> 
-     <%# <% else %> 
-    <%# <p class="sold-out-text">この商品は売り切れました</p> %>
-      <%# <% end %> 
-    <%# <% end %> 
-   
-  

@@ -6,16 +6,7 @@ class OrdersController < ApplicationController
   def index
     redirect_if_invalid_order # 自分が出品した商品 or 売り切れてる商品 の場合はトップページへ
     @order_address = OrderAddress.new
-    @item = Item.find(params[:item_id])
     gon.public_key = ENV.fetch('PAYJP_PUBLIC_KEY', nil)
-  end
-
-  def new
-    redirect_if_invalid_order # 自分が出品した商品 or 売り切れてる商品 の場合はトップページへ
-    # 商品の情報を取得
-    @item = Item.find(params[:item_id])
-    @order_address = OrderAddress.new
-    gon.public_key = ENV.fetch('PAYJP_PUBLIC_KEY', nil) # これがトークン生成に必須！
   end
 
   def create

@@ -28,4 +28,5 @@ class User < ApplicationRecord
   validates :first_name_kana, format: { with: VALID_KANA_REGEX, message: 'is invalid' }
 
   has_many :items
+  has_many :orders
 end

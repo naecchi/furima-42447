@@ -1,7 +1,6 @@
 const pay = () => {
   const form = document.getElementById("charge-form");
   if (!form) return; // ← このページじゃなければ実行しない！
-  console.log("✅ card.js 発火 OK"); 
 
   const publicKey = gon.public_key
   const payjp = Payjp(publicKey) // PAY.JPテスト公開鍵/
@@ -22,7 +21,6 @@ const pay = () => {
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} name='token' type="hidden">`;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
-        console.log("token:", token);
       }
       numberElement.clear();
       expiryElement.clear();
