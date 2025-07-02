@@ -26,12 +26,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user == @item.user
-      @item.destroy
-    end
+    @item.destroy if current_user == @item.user
     redirect_to root_path
   end
-
 
   def create
     @item = Item.new(item_params)
@@ -55,5 +52,4 @@ class ItemsController < ApplicationController
       :prefecture_id, :shipping_day_id
     ).merge(user_id: current_user.id)
   end
-  
-end 
+end

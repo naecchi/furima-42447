@@ -6,30 +6,32 @@
       購入内容の確認
     </h1>
     <%# 購入内容の表示 %>
-    <div class='buy-item-info'>
-      <%= image_tag "item-sample.png", class: 'buy-item-img' %>
-      <div class='buy-item-right-content'>
-        <h2 class='buy-item-text'>
-          <%= "商品名" %>
-        </h2>
-        <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= '999,999,999' %></p>
-          <p class='item-price-sub-text'><%= '配送料負担' %></p>
-        </div>
-      </div>
+<div class='buy-item-info'>
+  <% if @item.image.attached? %>
+    <%= image_tag @item.image, class: 'buy-item-img' %>
+  <% end %>
+  <div class='buy-item-right-content'>
+    <h2 class='buy-item-text'>
+      <%= @item.name %>
+    </h2>
+    <div class='buy-item-price'>
+      <p class='item-price-text'>¥<%= number_with_delimiter(@item.price) %></p>
+      <p class='item-price-sub-text'><%= @item.delivery_cost.name %></p>
     </div>
-    <%# /購入内容の表示 %>
+  </div>
+</div>
+<%# /購入内容の表示 %>
 
-    <%# 支払額の表示 %>
-    <div class='item-payment'>
-      <h1 class='item-payment-title'>
-        支払金額
-      </h1>
-      <p class='item-payment-price'>
-        ¥<%= "販売価格" %>
-      </p>
-    </div>
-    <%# /支払額の表示 %>
+<%# 支払額の表示 %>
+<div class='item-payment'>
+  <h1 class='item-payment-title'>
+    支払金額
+  </h1>
+  <p class='item-payment-price'>
+    ¥<%= number_with_delimiter(@item.price) %>
+  </p>
+</div>
+<%# /支払額の表示 %>
     <% if @order_address.errors.any? %>
   <ul>
     <% @order_address.errors.full_messages.each do |message| %>
@@ -73,7 +75,7 @@
         <div id="cvc-form" class="input-default"></div>
       </div>
     </div>
-    <%# /カード情報の入力 %>
+   
     
     <%# 配送先の入力 %>
     <div class='shipping-address-form'>
