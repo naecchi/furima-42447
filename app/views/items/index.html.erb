@@ -1,3 +1,5 @@
+<%= include_gon %>
+
 <%= render "shared/header" %>
 <div class='main'>
 
@@ -127,21 +129,22 @@
       新規投稿商品
     </div>
 
-
+ <ul class="item-lists">
    <% if @items.present? %>
-  <% @items.each do |item| %>
-    <li class='list'>
-      <%= link_to item_path(item) do %>
-        <% if item.image.attached? %>
+ <% @items.each do |item| %>
+  <li class='list'>
+    <%= link_to item_path(item) do %>
+      <% if item.image.attached? %>
+        <div class="item-img-wrap">
           <%= image_tag item.image, class: "item-img" %>
-        <% end %>
-
-        <%# 商品が売れていればsold outを表示しましょう %>
-        <%# if item.order.present? %>
-        <%#   <div class='sold-out'>
-                <span>Sold Out!!</span>
-              </div> %>
-        <%# end %>
+          <% if item.order.present? %>
+            <div class="sold-out">
+              <span>Sold Out!!</span>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    
 
         <div class='item-info'>
           <h3 class='item-name'><%= item.name %></h3>
@@ -153,7 +156,7 @@
             </div>
           </div>
         </div>
-      <% end %> <!-- link_to の end -->
+      <% end %> 
     </li>
   <% end %>
 
@@ -176,7 +179,7 @@
       <% end %>
     </li>
   <% end %>
-
+  </ul>
 </ul>
   </div>
   <%# /商品一覧 %>

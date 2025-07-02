@@ -60,7 +60,7 @@
 
 | Column          | Type       | Options                       | 説明               |
 |-----------------|------------|-------------------------------|--------------------|
-| purchase        | references | null: false, foreign_key: true| 購入情報との紐付け   |
+| order           | references | null: false, foreign_key: true| 購入情報との紐付け   |
 | post_code       | string     | null: false                   | 郵便番号            |
 | prefecture_id   | integer    | null: false                   | 都道府県（ActiveHash）|
 | city            | string     | null: false                   | 市区町村           |

@@ -238,6 +238,7 @@ a {
 }
 
 .item-lists {
+  list-style: none;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
@@ -309,3 +310,9 @@ a {
 }
 
 /* //商品一覧 */
+
+.item-img-wrap {
+  position: relative;
+  display: inline-block;
+}
+

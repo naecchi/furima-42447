@@ -35,3 +35,11 @@ end
 group :production do
   gem 'pg'
 end
+
+group :development, :test do
+  gem 'pry-rails'
+end
+
+gem 'payjp'
+
+gem 'gon'
