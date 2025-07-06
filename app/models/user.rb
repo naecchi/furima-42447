@@ -5,17 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  # # パスワード : 全角で書いてきてもエラーで防ぐ
-  # validates :password, format: { with: /\A[\p{ASCII}]+\z/ }
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :last_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :birthday_date, presence: true
 
-  # パスワード：全角はエラーではじく（半角英数字のみ許可）
-  VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数字のみで入力してください' }
+  # パスワード：半角英数字混合で入力
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]+\z/
+  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数字混合で入力してください' }
 
   # 名前：全角（漢字・ひらがな・カタカナ）
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヴー々一-龥]+\z/
